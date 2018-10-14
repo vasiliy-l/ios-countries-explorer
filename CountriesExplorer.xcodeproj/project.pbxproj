@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		3D1895D52173CA0F004498BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1895D42173CA0F004498BE /* AppDelegate.swift */; };
-		3D1895D72173CA0F004498BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1895D62173CA0F004498BE /* ViewController.swift */; };
 		3D1895DA2173CA0F004498BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1895D82173CA0F004498BE /* Main.storyboard */; };
 		3D1895DC2173CA10004498BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1895DB2173CA10004498BE /* Assets.xcassets */; };
 		3D1895DF2173CA10004498BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1895DD2173CA10004498BE /* LaunchScreen.storyboard */; };
+		3D1895EB2173CD47004498BE /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1895EA2173CD47004498BE /* CountryDetailsViewController.swift */; };
+		3D1895ED2173CD61004498BE /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1895EC2173CD61004498BE /* CountriesListViewController.swift */; };
+		3D1895F02173CF45004498BE /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1895EE2173CF45004498BE /* CountryTableViewCell.swift */; };
+		3D1895F12173CF45004498BE /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1895EF2173CF45004498BE /* CountryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D1895D12173CA0F004498BE /* CountriesExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1895D42173CA0F004498BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D1895D62173CA0F004498BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D1895D92173CA0F004498BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D1895DB2173CA10004498BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D1895DE2173CA10004498BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D1895E02173CA10004498BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D1895EA2173CD47004498BE /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
+		3D1895EC2173CD61004498BE /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
+		3D1895EE2173CF45004498BE /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		3D1895EF2173CF45004498BE /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		3D1895D32173CA0F004498BE /* CountriesExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				3D1895D42173CA0F004498BE /* AppDelegate.swift */,
-				3D1895D62173CA0F004498BE /* ViewController.swift */,
-				3D1895D82173CA0F004498BE /* Main.storyboard */,
-				3D1895DB2173CA10004498BE /* Assets.xcassets */,
-				3D1895DD2173CA10004498BE /* LaunchScreen.storyboard */,
-				3D1895E02173CA10004498BE /* Info.plist */,
+				3D1895E62173CA1B004498BE /* Model */,
+				3D1895E72173CA24004498BE /* View */,
+				3D1895E82173CA29004498BE /* Controller */,
+				3D1895E92173CA2F004498BE /* Supporting Files */,
 			);
 			path = CountriesExplorer;
+			sourceTree = "<group>";
+		};
+		3D1895E62173CA1B004498BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3D1895E72173CA24004498BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D1895DD2173CA10004498BE /* LaunchScreen.storyboard */,
+				3D1895D82173CA0F004498BE /* Main.storyboard */,
+				3D1895EE2173CF45004498BE /* CountryTableViewCell.swift */,
+				3D1895EF2173CF45004498BE /* CountryTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3D1895E82173CA29004498BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D1895D42173CA0F004498BE /* AppDelegate.swift */,
+				3D1895EC2173CD61004498BE /* CountriesListViewController.swift */,
+				3D1895EA2173CD47004498BE /* CountryDetailsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3D1895E92173CA2F004498BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D1895DB2173CA10004498BE /* Assets.xcassets */,
+				3D1895E02173CA10004498BE /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1895F12173CF45004498BE /* CountryTableViewCell.xib in Resources */,
 				3D1895DF2173CA10004498BE /* LaunchScreen.storyboard in Resources */,
 				3D1895DC2173CA10004498BE /* Assets.xcassets in Resources */,
 				3D1895DA2173CA0F004498BE /* Main.storyboard in Resources */,
@@ -135,7 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D1895D72173CA0F004498BE /* ViewController.swift in Sources */,
+				3D1895F02173CF45004498BE /* CountryTableViewCell.swift in Sources */,
+				3D1895EB2173CD47004498BE /* CountryDetailsViewController.swift in Sources */,
+				3D1895ED2173CD61004498BE /* CountriesListViewController.swift in Sources */,
 				3D1895D52173CA0F004498BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
