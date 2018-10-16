@@ -9,10 +9,14 @@
 import UIKit
 
 class CountriesListViewController: UITableViewController {
-
+    
+    let viewModel = CountryViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil), forCellReuseIdentifier: CountryTableViewCell.reuseIdentifier)
+        tableView?.register(CountryTableViewCell.nib, forCellReuseIdentifier: CountryTableViewCell.identifier)
+        viewModel.tableView = tableView // TODO
+        tableView.dataSource = viewModel
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,24 +26,6 @@ class CountriesListViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CountryTableViewCell.reuseIdentifier, for: indexPath) as! CountryTableViewCell
-        
-        // TODO: - update logic
-        cell.countryName.text = "Ukraine"
-        cell.capital.text = "Kiev"
-        cell.currencies.text = "UAH"
-
-        return cell
-    }
- 
 
     /*
     // Override to support conditional editing of the table view.

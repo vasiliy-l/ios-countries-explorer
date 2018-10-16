@@ -11,20 +11,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" rowHeight="119" id="KGk-i7-Jjw" customClass="CountryTableViewCell" customModule="CountriesExplorer" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="119" id="KGk-i7-Jjw" customClass="CountryTableViewCell" customModule="CountriesExplorer" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="383" height="119"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="383" height="118.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zC4-VU-F4T">
+                    <wkWebView userInteractionEnabled="NO" contentMode="scaleAspectFit" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAh-TT-eW7">
                         <rect key="frame" x="228" y="13" width="139" height="93"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="93" id="4vO-Ch-4IM"/>
-                            <constraint firstAttribute="width" constant="139" id="B5k-iY-e8C"/>
+                            <constraint firstAttribute="width" constant="139" id="hlb-ca-06c"/>
+                            <constraint firstAttribute="height" constant="93" id="qFu-Zp-bLB"/>
                         </constraints>
-                    </imageView>
+                        <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO" suppressesIncrementalRendering="YES">
+                            <dataDetectorTypes key="dataDetectorTypes"/>
+                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                            <wkPreferences key="preferences"/>
+                        </wkWebViewConfiguration>
+                    </wkWebView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mns-X3-GIA" userLabel="Details">
                         <rect key="frame" x="16" y="11" width="202" height="97"/>
                         <subviews>
@@ -64,13 +70,13 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="TAh-TT-eW7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="5Nn-YJ-wti"/>
                     <constraint firstItem="Mns-X3-GIA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="98M-8o-ifI"/>
-                    <constraint firstItem="zC4-VU-F4T" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Hgf-Ew-pZQ"/>
                     <constraint firstItem="Mns-X3-GIA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Nky-AX-Lnx"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="zC4-VU-F4T" secondAttribute="bottom" constant="2" id="cMN-we-1Vx"/>
-                    <constraint firstItem="zC4-VU-F4T" firstAttribute="leading" secondItem="Mns-X3-GIA" secondAttribute="trailing" constant="10" id="iUT-OU-ed4"/>
-                    <constraint firstItem="zC4-VU-F4T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="jIc-xB-H3y"/>
+                    <constraint firstItem="TAh-TT-eW7" firstAttribute="leading" secondItem="Mns-X3-GIA" secondAttribute="trailing" constant="10" id="Yru-de-emj"/>
                     <constraint firstItem="Mns-X3-GIA" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="nK0-Ew-4fF"/>
+                    <constraint firstItem="TAh-TT-eW7" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="sbL-IF-HYp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="TAh-TT-eW7" secondAttribute="bottom" constant="2" id="uaB-sx-eMR"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -78,6 +84,7 @@
                 <outlet property="capital" destination="aeD-6M-Sea" id="pyY-Jt-Mo8"/>
                 <outlet property="countryName" destination="Sfh-43-ESF" id="VU5-Sg-afI"/>
                 <outlet property="currencies" destination="p2w-AM-O5M" id="F5l-x3-Gbe"/>
+                <outlet property="flagWebView" destination="TAh-TT-eW7" id="VJf-lV-ZzZ"/>
             </connections>
             <point key="canvasLocation" x="114.40000000000001" y="111.0944527736132"/>
         </tableViewCell>
