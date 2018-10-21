@@ -12,7 +12,7 @@ import WebKit
 
 class CountryTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var flagWebView: WKWebView!
+    @IBOutlet weak var flagImage: UIImageView!
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var capital: UILabel!
     @IBOutlet weak var currencies: UILabel!
@@ -26,13 +26,8 @@ class CountryTableViewCell: UITableViewCell {
             countryName.text = item.name
             capital.text = item.capital
             currencies.text = item.currencies?.joined(separator: ",")
-            if let urlString = item.flagUrl, let url = URL(string: urlString) {
-                Alamofire.request(url).responseData { responseData in
-                    if let imageData = responseData.data {
-                        self.flagWebView.load(imageData, mimeType: "image/svg+xml", characterEncodingName: "UTF-8", baseURL: url)
-                    }
-                }
-            }
+            // TODO: set flag image
+            flagImage.image = UIImage(named: "flag")
         }
     }
     
@@ -46,15 +41,13 @@ class CountryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.accessoryType = .disclosureIndicator
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        
-        if let url = URL(string: "about:blank") {
-            flagWebView.load(URLRequest(url: url))
-        }
+        flagImage.image = nil
     }
     
 }

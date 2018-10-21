@@ -18,19 +18,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="383" height="118.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <wkWebView userInteractionEnabled="NO" contentMode="scaleAspectFit" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAh-TT-eW7">
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="1ec-Um-gEl" userLabel="Flag Image">
                         <rect key="frame" x="228" y="13" width="139" height="93"/>
-                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="139" id="hlb-ca-06c"/>
-                            <constraint firstAttribute="height" constant="93" id="qFu-Zp-bLB"/>
+                            <constraint firstAttribute="height" constant="93" id="EG2-tn-yNf"/>
+                            <constraint firstAttribute="width" constant="139" id="LlH-w2-MuE"/>
                         </constraints>
-                        <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO" suppressesIncrementalRendering="YES">
-                            <dataDetectorTypes key="dataDetectorTypes"/>
-                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                            <wkPreferences key="preferences"/>
-                        </wkWebViewConfiguration>
-                    </wkWebView>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mns-X3-GIA" userLabel="Details">
                         <rect key="frame" x="16" y="11" width="202" height="97"/>
                         <subviews>
@@ -70,13 +65,13 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="TAh-TT-eW7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="5Nn-YJ-wti"/>
+                    <constraint firstItem="1ec-Um-gEl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="88e-ig-9Ql"/>
                     <constraint firstItem="Mns-X3-GIA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="98M-8o-ifI"/>
+                    <constraint firstItem="1ec-Um-gEl" firstAttribute="leading" secondItem="Mns-X3-GIA" secondAttribute="trailing" constant="10" id="Mg8-js-03r"/>
                     <constraint firstItem="Mns-X3-GIA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Nky-AX-Lnx"/>
-                    <constraint firstItem="TAh-TT-eW7" firstAttribute="leading" secondItem="Mns-X3-GIA" secondAttribute="trailing" constant="10" id="Yru-de-emj"/>
+                    <constraint firstItem="1ec-Um-gEl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="hn1-0t-u7r"/>
                     <constraint firstItem="Mns-X3-GIA" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="nK0-Ew-4fF"/>
-                    <constraint firstItem="TAh-TT-eW7" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="sbL-IF-HYp"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="TAh-TT-eW7" secondAttribute="bottom" constant="2" id="uaB-sx-eMR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1ec-Um-gEl" secondAttribute="bottom" constant="2" id="v4i-19-XP6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -84,9 +79,12 @@
                 <outlet property="capital" destination="aeD-6M-Sea" id="pyY-Jt-Mo8"/>
                 <outlet property="countryName" destination="Sfh-43-ESF" id="VU5-Sg-afI"/>
                 <outlet property="currencies" destination="p2w-AM-O5M" id="F5l-x3-Gbe"/>
-                <outlet property="flagWebView" destination="TAh-TT-eW7" id="VJf-lV-ZzZ"/>
+                <outlet property="flagImage" destination="1ec-Um-gEl" id="Iaa-Xl-XPr"/>
             </connections>
             <point key="canvasLocation" x="114.40000000000001" y="111.0944527736132"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="flag" width="24" height="24"/>
+    </resources>
 </document>

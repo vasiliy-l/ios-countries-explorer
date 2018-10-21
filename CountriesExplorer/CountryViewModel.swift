@@ -13,12 +13,20 @@ import SwiftyJSON
 
 class CountryViewModel: NSObject {
     
-    var tableView: UITableView? // TODO
+    var tableView: UITableView? {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
     
-    var items = [Country]()
+    private(set) var items = [Country]()
     
     override init() {
         super.init()
+        fetchData()
+    }
+    
+    private func fetchData() {
         Alamofire.request("https://restcountries.eu/rest/v2/all").responseJSON { response in
             response.result.ifSuccess {
                 let responseJSON: JSON = JSON(response.result.value!)
@@ -26,9 +34,14 @@ class CountryViewModel: NSObject {
                     self.items.append(Country(json))
                 })
                 
-                self.tableView?.reloadData() // TODO
+                self.tableView?.reloadData()
             }
         }
+    }
+    
+    func setAsDataSource(for table: UITableView) {
+        self.tableView = table
+        table.dataSource = self
     }
 }
 
@@ -48,4 +61,5 @@ extension CountryViewModel: UITableViewDataSource {
         
         return UITableViewCell()
     }
+    
 }

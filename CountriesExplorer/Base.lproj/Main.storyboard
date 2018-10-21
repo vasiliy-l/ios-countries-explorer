@@ -44,8 +44,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i7t-sx-hzv" userLabel="Flag Image">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="i7t-sx-hzv" userLabel="Flag Image">
                                 <rect key="frame" x="16" y="80" width="343" height="234"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="234" id="GG4-0h-HJJ"/>
                                 </constraints>
@@ -122,4 +123,7 @@
             <point key="canvasLocation" x="924" y="131.78410794602701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flag" width="24" height="24"/>
+    </resources>
 </document>

@@ -14,9 +14,10 @@ class CountriesListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView?.register(CountryTableViewCell.nib, forCellReuseIdentifier: CountryTableViewCell.identifier)
-        viewModel.tableView = tableView // TODO
-        tableView.dataSource = viewModel
+        
+        viewModel.setAsDataSource(for: tableView)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
