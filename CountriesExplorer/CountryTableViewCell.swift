@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import WebKit
+import SVGKit
 
 class CountryTableViewCell: UITableViewCell {
     
@@ -26,8 +27,17 @@ class CountryTableViewCell: UITableViewCell {
             countryName.text = item.name
             capital.text = item.capital
             currencies.text = item.currencies?.joined(separator: ",")
-            // TODO: set flag image
-            flagImage.image = UIImage(named: "flag")
+            
+            DispatchQueue.main.async {
+                guard let svgUrl = item.flagUrl else {
+                    return
+                }
+                self.flagImage.contentMode = .scaleAspectFit
+                self.flagImage.backgroundColor = nil
+                if let url = URL(string: svgUrl) {
+                    self.flagImage.image = SVGKImage(contentsOf: url)?.uiImage
+                }
+            }
         }
     }
     
@@ -44,10 +54,16 @@ class CountryTableViewCell: UITableViewCell {
         
         self.accessoryType = .disclosureIndicator
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-        flagImage.image = nil
+        
+        countryName.text = ""
+        capital.text = ""
+        currencies.text = ""
+        flagImage.contentMode = .center
+        flagImage.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
+        flagImage.image = UIImage(named: "flag")
     }
     
 }

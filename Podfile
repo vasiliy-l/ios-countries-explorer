@@ -8,5 +8,6 @@ target 'CountriesExplorer' do
   # pod 'Nuke'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '3.x'
 
 end
