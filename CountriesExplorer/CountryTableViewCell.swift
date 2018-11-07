@@ -32,7 +32,7 @@ class CountryTableViewCell: UITableViewCell {
                 guard let svgUrl = item.flagUrl else {
                     return
                 }
-                self.flagImage.contentMode = .scaleAspectFit
+                self.flagImage.contentMode = .scaleToFill
                 self.flagImage.backgroundColor = nil
                 if let url = URL(string: svgUrl) {
                     self.flagImage.image = SVGKImage(contentsOf: url)?.uiImage
